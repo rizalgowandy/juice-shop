@@ -3,6 +3,8 @@ server:
     type: number
   basePath:
     type: string
+  baseUrl:
+    type: string
 application:
   domain:
     type: string
@@ -50,6 +52,8 @@ application:
       type: string
     pressKitUrl:
       type: string
+    nftUrl:
+      type: string
     questionnaireUrl:
       type: string
   recyclePage:
@@ -65,14 +69,6 @@ application:
     message:
       type: string
   cookieConsent:
-    backgroundColor:
-      type: string
-    textColor:
-      type: string
-    buttonColor:
-      type: string
-    buttonTextColor:
-      type: string
     message:
       type: string
     dismissText:
@@ -88,6 +84,10 @@ application:
       type: string
     acknowledgements:
       type: string
+    hiring:
+      type: string
+    csaf:
+      type: string
   promotion:
     video:
       type: string
@@ -102,8 +102,7 @@ application:
     clientId:
       type: string
     authorizedRedirects:
-      -
-        uri:
+      - uri:
           type: string
         proxy:
           type: string
@@ -122,18 +121,22 @@ challenges:
     type: string
   xssBonusPayload:
     type: string
-  safetyOverride:
-    type: boolean
+  safetyMode:
+    type: string
+    enum: ['enabled', 'disabled','auto']
   showFeedbackButtons:
     type: boolean
+  csafHashValue:
+    type: string
 hackingInstructor:
   isEnabled:
     type: boolean
   avatarImage:
     type: string
+  hintPlaybackSpeed:
+    type: string
 products:
-  -
-    name:
+  - name:
       type: string
     price:
       type: number
@@ -158,17 +161,14 @@ products:
     fileForRetrieveBlueprintChallenge:
       type: string
     exifForBlueprintChallenge:
-      -
-        type: string
+      - type: string
     reviews:
-      -
-        text:
+      - text:
           type: string
         author:
           type: string
 memories:
-  -
-    image:
+  - image:
       type: string
     caption:
       type: string
@@ -498,6 +498,26 @@ ctf:
         type: string
       code:
         type: string
+    nftUnlockChallenge:
+      name:
+        type: string
+      code:
+        type: string
+    nftMintChallenge:
+      name:
+        type: string
+      code:
+        type: string
+    web3WalletChallenge:
+      name:
+        type: string
+      code:
+        type: string
+    web3SandboxChallenge:
+      name:
+        type: string
+      code:
+        type: string
     securityPolicyChallenge:
       name:
         type: string
@@ -684,6 +704,21 @@ ctf:
       code:
         type: string
     lfrChallenge:
+      name:
+        type: string
+      code:
+        type: string
+    closeNotificationsChallenge:
+      name:
+        type: string
+      code:
+        type: string
+    emptyUserRegistration:
+      name:
+        type: string
+      code:
+        type: string
+    csafChallenge:
       name:
         type: string
       code:
